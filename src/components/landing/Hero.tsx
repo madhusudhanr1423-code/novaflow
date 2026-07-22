@@ -4,7 +4,7 @@ import { DashboardMock } from "./DashboardMock";
 
 export function Hero() {
   return (
-    <section id="top" className="relative overflow-hidden pt-36 pb-20 md:pt-44 md:pb-28">
+    <section id="top" className="relative overflow-hidden pt-32 pb-20 md:pt-36 md:pb-28">
       {/* Ambient background */}
       <div className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute inset-0 grid-bg" />
@@ -12,28 +12,16 @@ export function Hero() {
           className="absolute inset-x-0 top-0 h-[720px]"
           style={{ background: "var(--gradient-hero)" }}
         />
-        <div className="absolute left-1/2 top-64 h-[420px] w-[720px] -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
+        <div className="absolute left-1/2 top-56 h-[380px] w-[650px] -translate-x-1/2 rounded-full bg-primary/15 blur-[120px]" />
         <div className="absolute left-1/4 top-40 h-[260px] w-[260px] rounded-full bg-accent/20 blur-[100px]" />
       </div>
 
       <div className="container-page">
-       <motion.div
-  initial={{ opacity: 0, y: 40, scale: 0.96 }}
-  animate={{
-    opacity: 1,
-    scale: 1,
-    y: [0, -8, 0],
-  }}
-  transition={{
-    opacity: { duration: 0.7, delay: 0.2 },
-    scale: { duration: 0.7, delay: 0.2 },
-    y: {
-      duration: 6,
-      repeat: Infinity,
-      ease: "easeInOut",
-    },
-  }}
-  className="relative mx-auto mt-20 max-w-6xl"
+      <motion.div
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.6, ease: "easeOut" }}
+  className="mx-auto max-w-3xl text-center"
 >
           <div className="absolute left-1/2 top-24 -z-10 h-[280px] w-[600px] -translate-x-1/2 rounded-full bg-primary/10 blur-[140px]" />
           <a
@@ -102,11 +90,29 @@ export function Hero() {
 </div>
 
         <motion.div
-          initial={{opacity: 0,y: 40,scale: 0.96,}}
-          animate={{ opacity: 1, y: 0, scale: 1 }}
-          transition={{ duration: 0.7, delay: 0.2, ease: "easeOut" }}
-          className="relative mx-auto mt-20 max-w-6xl"
-        >
+  initial={{ opacity: 0, y: 40, scale: 0.96 }}
+  animate={{
+    opacity: 1,
+    scale: 1,
+    y: [0, -6, 0],
+  }}
+  transition={{
+    opacity: {
+      duration: 0.7,
+      delay: 0.2,
+    },
+    scale: {
+      duration: 0.7,
+      delay: 0.2,
+    },
+    y: {
+      duration: 6,
+      repeat: Infinity,
+      ease: "easeInOut",
+    },
+  }}
+  className="relative mx-auto mt-20 max-w-6xl"
+>
           <div className="glass-strong overflow-hidden rounded-[28px] p-1.5 shadow-[0_60px_160px_-40px_rgba(125,110,255,0.45)] transition-all duration-500 hover:shadow-[0_70px_180px_-30px_rgba(125,110,255,0.55)]">
             <div className="overflow-hidden rounded-[24px] border border-border-strong">
               <DashboardMock />
