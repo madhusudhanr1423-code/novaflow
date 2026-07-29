@@ -18,7 +18,7 @@ const bars = [38, 52, 44, 68, 58, 82, 74, 92, 86, 74, 88, 96];
 export function WorkspaceMock() {
   const [activeMenu, setActiveMenu] = useState("Overview");
   return (
-    <div className="grid grid-cols-[220px_1fr] bg-[oklch(0.14_0.02_265)] text-[13px]">
+    <div className="grid grid-cols-1 md:grid-cols-[220px_1fr] bg-[oklch(0.14_0.02_265)] text-[13px]">
       {/* Sidebar */}
       <aside className="hidden border-r border-border p-3 md:block">
         <div className="mb-4 flex items-center gap-2 px-2 py-1">
@@ -77,10 +77,10 @@ className="h-1 rounded-full bg-[image:var(--gradient-primary)]"
        
 
         {/* Topbar */}
-        <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+       <div className="flex min-w-0 items-center gap-3 border-b border-border px-4 py-3">
           <div className="flex items-center gap-2 rounded-md border border-border bg-white/[0.03] px-2 py-1 text-muted-foreground transition-all duration-200 hover:border-primary/30 hover:shadow-[0_0_20px_rgba(120,100,255,0.18)]">
             <Search className="h-3.5 w-3.5" />
-            <span className="text-xs">Search everything…</span>
+            <span className="truncate text-xs">Search everything…</span>
             <span className="ml-4 flex items-center gap-1 rounded border border-border px-1 text-[10px]">
               <Command className="h-2.5 w-2.5" /> 
             </span>
@@ -135,7 +135,7 @@ className="h-1 rounded-full bg-[image:var(--gradient-primary)]"
                 ))}
               </div>
             </div>
-            <div className="flex h-32 items-end gap-2">
+            <div className="flex h-32 items-end gap-1 md:gap-2">
               {bars.map((h, i) => (
                 <motion.div
                  key={i}

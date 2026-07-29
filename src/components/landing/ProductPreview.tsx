@@ -45,13 +45,13 @@ export function ProductPreview() {
         />
 
         {/* Tabs */}
-        <div className="mt-10 flex justify-center">
-          <div className="glass inline-flex rounded-full p-1">
+        <div className="mt-10 flex justify-center px-4">
+  <div className="glass grid w-full max-w-md grid-cols-3 rounded-full p-1">
             {tabs.map((t) => (
               <button
                 key={t.id}
                 onClick={() => setTab(t.id)}
-                className={`relative flex min-w-[140px] items-center justify-center gap-2 rounded-full px-5 py-2 text-sm transition-all duration-200 ${
+                className={`relative flex items-center justify-center gap-1 rounded-full px-2 py-2 text-xs transition-all duration-200 sm:gap-2 sm:px-4 sm:text-sm ${
                   tab === t.id
                     ? "text-foreground"
                     : "text-muted-foreground hover:text-foreground"
@@ -101,15 +101,15 @@ export function ProductPreview() {
             <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 h-[420px] w-[760px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-primary/10 blur-[140px]" />
 
             {/* Live Badge */}
-            <div className="absolute right-20 top-4 z-20">
+            {/* <div className="absolute right-20 top-4 z-20">
               <span className="inline-flex items-center gap-2 rounded-full border border-primary/20 bg-background/80 px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-primary backdrop-blur-xl">
                 <span className="h-2 w-2 rounded-full bg-green-400 animate-pulse" />
                 Live
               </span>
-            </div>
+            </div> */}
 
             <div className="overflow-hidden rounded-xl border border-border-strong">
-              <div className="h-[400px] w-full overflow-hidden">
+              <div className="min-h-[400px] w-full overflow-hidden md:h-[400px]">
                 {tab === "workspace" && <WorkspaceMock />}
                 {tab === "agents" && <AgentsMock />}
                 {tab === "pipelines" && <PipelineMock />}

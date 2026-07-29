@@ -35,18 +35,39 @@ export function Footer() {
             <p className="mt-4 max-w-sm text-sm text-muted-foreground">
               The intelligent workspace built for how modern teams actually work.
             </p>
-            <div className="group mt-6 flex items-center gap-2 font-semibold">
-              {[Github, Twitter, Linkedin].map((Icon, i) => (
-                <a
-                  key={i}
-                  href="#"
-                  className="grid h-9 w-9 place-items-center rounded-lg border border-border text-muted-foreground transition-colors transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.04] hover:text-primary"
-                  aria-label="Social link"
-                >
-                  <Icon className="h-4 w-4" strokeWidth={1.75} group-hover:rotate-6 group-hover:scale-110 transition-transform duration-300/>
-                </a>
-              ))}
-            </div>
+           <div className="mt-6 flex items-center gap-2 font-semibold">
+  {[
+    {
+      Icon: Github,
+      href: "https://github.com/",
+      label: "GitHub",
+    },
+    {
+      Icon: Twitter,
+      href: "https://twitter.com/",
+      label: "Twitter",
+    },
+    {
+      Icon: Linkedin,
+      href: "https://linkedin.com/",
+      label: "LinkedIn",
+    },
+  ].map(({ Icon, href, label }) => (
+    <a
+      key={label}
+      href={href}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="group grid h-9 w-9 place-items-center rounded-lg border border-border text-muted-foreground transition-all duration-300 hover:-translate-y-1 hover:border-primary/30 hover:bg-white/[0.04] hover:text-primary"
+      aria-label={label}
+    >
+      <Icon
+        className="h-4 w-4 transition-transform duration-300 group-hover:rotate-6 group-hover:scale-110"
+        strokeWidth={1.75}
+      />
+    </a>
+  ))}
+</div>
           </div>
 
           {cols.map((c) => (
@@ -73,7 +94,7 @@ export function Footer() {
         <div className="mt-12 flex flex-col items-start justify-between gap-3 border-t border-border pt-6 text-xs text-muted-foreground sm:flex-row sm:items-center">
           <p>© {new Date().getFullYear()} NovaFlow. All rights reserved.</p>
           <p className="flex items-center gap-2">
-            <span className="h-2 w-2 rounded-full bg-primary aniamte-pulse" />
+            <span className="h-2 w-2 rounded-full bg-primary animate-pulse" />
             All systems operational
           </p>
         </div>

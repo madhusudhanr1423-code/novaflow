@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
 
 function Index() {
   return (
-    <main className="relative">
+    <main className="relative overflow-x-hidden">
       <Navbar />
       <Hero />
       <TrustedBy />
