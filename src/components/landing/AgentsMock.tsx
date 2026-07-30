@@ -5,7 +5,7 @@ const agents = [
   {
     name: "Customer Support AI",
     status: "Running",
-    success: "98.4%",
+    success: "98.7%",
     tasks: "42",
     latency: "0.8s",
   },
